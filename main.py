@@ -1,12 +1,15 @@
 import pandas as pd
-from pull import get_coingecko_prices
 from urllib.parse import urlparse, parse_qs
+import os
+
+from pull import get_coingecko_prices
 
 if __name__ == "__main__": 
 
     df = pd.read_csv("Api_URLs.txt", sep=r"\s+")
 
     # Pulls the URL for the API from a txt file, so more can be added in the future without changing the code. 
+    os.makedirs("output", exist_ok=True)
 
     for url in df["url"]:
         data = get_coingecko_prices(url)
