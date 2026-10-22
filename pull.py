@@ -10,13 +10,11 @@ def get_coingecko_prices(url):
     Returns:
         dict: A dictionary containing the cryptocurrency prices.
 
-    Raises:
-        requests.exceptions.RequestException: If there is an issue with the HTTP request.
     """
     try:
-        response = requests.get(url, timeout=10)  # Set a timeout for the request
+        response = requests.get(url, timeout=10) 
         response.raise_for_status()  # Raise an error for bad responses (4xx and 5xx)
-        return response.json()  # Return the JSON response as a dictionary
+        return response.json()  
     except requests.exceptions.RequestException as e:
         print(f"An error occurred while fetching data from CoinGecko: {e}")
         return None
