@@ -19,8 +19,8 @@ gbp = combined[combined["currency"] == "gbp"]
 # Highest and lowest priced coin in GBP
 highest = gbp.loc[gbp["price"].idxmax()]
 lowest = gbp.loc[gbp["price"].idxmin()]
-print(f"Highest: {highest['coin']} at £{highest['price']}")
-print(f"Lowest: {lowest['coin']} at £{lowest['price']}")
+print(f"Highest: {highest['coin']} at £{highest['price']:.2f}")
+print(f"Lowest: {lowest['coin']} at £{lowest['price']:.2f}")
 
 # Average GBP price across all coins found
 print(f"Average GBP price: £{gbp['price'].mean():.2f}")
