@@ -8,7 +8,7 @@ def get_coingecko_prices(url):
         url (str): The URL of the CoinGecko API endpoint.
 
     Returns:
-        dict: A dictionary containing the cryptocurrency prices.
+        dict: A dictionary containing the cryptocurrency prices or None if the request fails.
 
     """
     try:
