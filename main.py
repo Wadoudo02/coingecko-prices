@@ -22,6 +22,6 @@ for url in df["url"]:
         coin_df = pd.DataFrame(list(prices.items()), columns=["currency", "price"])
         # Reorder the rows
         coin_df = coin_df.set_index("currency").reindex(url_order).reset_index()
-        coin_df.to_csv(f"{coin}.csv", index=False)
+        coin_df.to_csv(f"output/{coin}.csv", index=False)
 
 
